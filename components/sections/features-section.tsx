@@ -10,17 +10,17 @@ import { FEATURES } from "@/constant";
 
 export function FeaturesSection() {
   return (
-    <section className="bg-zinc-950 py-24 border-t border-zinc-800/50">
+    <section className="bg-background py-24 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
             Everything you need
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
             Configure your full stack
           </h2>
-          <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             Every choice scaffolded correctly, wired together, and ready for
             production.
           </p>
@@ -31,7 +31,7 @@ export function FeaturesSection() {
           {FEATURES.map((feature) => (
             <Card
               key={feature.id}
-              className="group hover:border-zinc-700 hover:bg-zinc-900 text-zinc-400 transition-all duration-200"
+              className="group border border-border/80 hover:border-border hover:bg-muted/40 text-muted-foreground transition-all duration-200"
             >
               <CardHeader className="pb-3">
                 <div className="text-2xl mb-3">{feature.icon}</div>

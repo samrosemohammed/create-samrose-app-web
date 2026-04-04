@@ -12,17 +12,17 @@ import { HeroInstallTabs } from "./hero-install-tabs";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 pt-20 pb-24">
+    <section className="relative overflow-hidden bg-background pt-20 pb-24 border-b border-border/60">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(to right, #10b981 1px, transparent 1px), linear-gradient(to bottom, #10b981 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, var(--primary) 1px, transparent 1px), linear-gradient(to bottom, var(--primary) 1px, transparent 1px)`,
           backgroundSize: "64px 64px",
         }}
       />
       {/* Radial glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Badges */}
@@ -34,13 +34,13 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-100 leading-[1.1]">
-          Scaffold your <span className="text-emerald-400">Next.js app</span>
+        <h1 className="mx-auto max-w-4xl text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+          Scaffold your <span className="text-primary">Next.js app</span>
           <br />
           in seconds
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400 leading-relaxed">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
           One CLI to configure your entire stack — ORM, database, auth, state
           management, API layer, and more. Stop spending hours on boilerplate.
         </p>

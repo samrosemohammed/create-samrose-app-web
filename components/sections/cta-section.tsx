@@ -7,16 +7,16 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 export function CTASection() {
   return (
-    <section className="bg-zinc-900/30 py-24 border-t border-zinc-800/50">
+    <section className="bg-muted/20 py-24 border-t border-border">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-10 shadow-2xl shadow-black/30">
-          <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-2xl mb-6">
+        <div className="rounded-2xl border border-border bg-card p-10 shadow-2xl shadow-black/20">
+          <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-primary/10 border border-primary/20 text-2xl mb-6">
             🚀
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
             Start building today
           </h2>
-          <p className="text-zinc-400 max-w-lg mx-auto mb-8">
+          <p className="text-muted-foreground max-w-lg mx-auto mb-8">
             No configuration, no boilerplate headaches. Just run the command and
             your opinionated, production-ready Next.js project is ready.
           </p>

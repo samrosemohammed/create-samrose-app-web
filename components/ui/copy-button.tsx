@@ -19,8 +19,8 @@ export function CopyButton({ text, className }: CopyButtonProps) {
       className={cn(
         "inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium transition-all duration-150",
         copied
-          ? "text-emerald-400"
-          : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800",
+          ? "text-primary"
+          : "text-muted-foreground hover:text-foreground hover:bg-muted",
         className,
       )}
       aria-label="Copy to clipboard"
