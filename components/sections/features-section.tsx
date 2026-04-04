@@ -7,6 +7,29 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FEATURES } from "@/constant";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ApiIcon,
+  BrushIcon,
+  CodeIcon,
+  DatabaseIcon,
+  FlowIcon,
+  LockIcon,
+  PuzzleIcon,
+  TestTubeIcon,
+  ToolsIcon,
+} from "@hugeicons/core-free-icons";
+
+const featureIcons: Record<string, typeof DatabaseIcon> = {
+  orm: CodeIcon,
+  database: DatabaseIcon,
+  auth: LockIcon,
+  ui: BrushIcon,
+  state: FlowIcon,
+  api: ApiIcon,
+  testing: TestTubeIcon,
+  extras: ToolsIcon,
+};
 
 export function FeaturesSection() {
   return (
@@ -34,7 +57,12 @@ export function FeaturesSection() {
               className="group border border-border/80 hover:border-border hover:bg-muted/40 text-muted-foreground transition-all duration-200"
             >
               <CardHeader className="pb-3">
-                <div className="text-2xl mb-3">{feature.icon}</div>
+                <div className="mb-3 text-primary">
+                  <HugeiconsIcon
+                    icon={featureIcons[feature.id] ?? PuzzleIcon}
+                    size={22}
+                  />
+                </div>
                 <CardTitle className="text-base">{feature.title}</CardTitle>
                 <CardDescription className="text-xs leading-relaxed">
                   {feature.description}

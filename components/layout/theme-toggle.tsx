@@ -12,7 +12,11 @@ import { useTheme } from "next-themes";
 
 type Theme = "light" | "dark" | "system";
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  compact?: boolean;
+}
+
+export function ThemeToggle({ compact = false }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -38,9 +42,41 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <div
-        className="inline-flex h-10 w-26.5 items-center rounded-full border border-border bg-muted/40 p-1"
+        className={cn(
+          "inline-flex items-center rounded-full border border-border bg-muted/40",
+          compact ? "h-10 w-10 justify-center" : "h-10 w-26.5 p-1",
+        )}
         aria-hidden="true"
       />
+    );
+  }
+
+  if (compact) {
+    const currentIcon = options.find((o) => o.value === activeTheme)?.icon;
+
+    const cycleTheme = () => {
+      if (activeTheme === "light") {
+        setTheme("dark");
+        return;
+      }
+
+      if (activeTheme === "dark") {
+        setTheme("system");
+        return;
+      }
+
+      setTheme("light");
+    };
+
+    return (
+      <button
+        type="button"
+        aria-label={`Theme: ${activeTheme}. Tap to switch theme`}
+        onClick={cycleTheme}
+        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/40 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      >
+        <HugeiconsIcon icon={currentIcon ?? Sun01Icon} size={16} />
+      </button>
     );
   }
 

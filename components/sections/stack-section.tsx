@@ -1,5 +1,26 @@
 import { Badge } from "@/components/ui/badge";
 import { STACK_OPTIONS } from "@/constant";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ApiIcon,
+  CodeIcon,
+  DatabaseIcon,
+  FlowIcon,
+  LockIcon,
+  PuzzleIcon,
+  TestTubeIcon,
+  ToolsIcon,
+} from "@hugeicons/core-free-icons";
+
+const stackIcons: Record<string, typeof DatabaseIcon> = {
+  orm: CodeIcon,
+  database: DatabaseIcon,
+  auth: LockIcon,
+  state: FlowIcon,
+  api: ApiIcon,
+  testing: TestTubeIcon,
+  extras: ToolsIcon,
+};
 
 export function StackSection() {
   return (
@@ -24,7 +45,18 @@ export function StackSection() {
               className="rounded-xl border border-border bg-card/50 p-5 hover:border-border/80 transition-colors"
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-xl">{stack.icon}</span>
+                <span className="text-primary">
+                  {(() => {
+                    const iconKey = stack.category.toLowerCase();
+
+                    return (
+                      <HugeiconsIcon
+                        icon={stackIcons[iconKey] ?? PuzzleIcon}
+                        size={18}
+                      />
+                    );
+                  })()}
+                </span>
                 <h3 className="font-semibold text-foreground text-sm">
                   {stack.category}
                 </h3>

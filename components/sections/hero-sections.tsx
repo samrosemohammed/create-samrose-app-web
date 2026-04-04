@@ -57,7 +57,11 @@ export function HeroSection() {
               <HugeiconsIcon icon={GitForkIcon} />
               GitHub
               {/* <Star className="h-3.5 w-3.5 text-yellow-400" /> */}
-              <HugeiconsIcon icon={StarIcon} />
+              <HugeiconsIcon
+                className="text-yellow-500"
+                fill="yellow"
+                icon={StarIcon}
+              />
             </Button>
           </Link>
         </div>

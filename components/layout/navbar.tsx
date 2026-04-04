@@ -50,7 +50,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
+          <ThemeToggle compact />
           <MobileNav />
         </div>
       </div>
