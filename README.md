@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# create-samrose-app-web
 
-## Getting Started
+Marketing website and documentation hub for the `create-samrose-app` CLI.
 
-First, run the development server:
+This project is built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, and shadcn/ui-style components.
+
+## What This Site Includes
+
+- Landing page for the CLI with hero, features, workflow, stack options, and CTA sections.
+- Documentation page with a sidebar and structured sections:
+  - Getting Started
+  - Installation
+  - Usage
+  - Stack Options
+  - Requirements
+  - Development
+- Changelog page with release timeline and stats.
+- Shared layout with responsive navbar, footer, and theme provider.
+
+## Routes
+
+- `/` - Marketing landing page
+- `/docs` - Product documentation
+- `/changelog` - Release history
+
+## Tech Stack
+
+- `next@16.2.2`
+- `react@19.2.4`
+- `typescript@5`
+- `tailwindcss@4`
+- `eslint@9`
+- `next-themes` for theme handling
+- `class-variance-authority`, `clsx`, `tailwind-merge` for styling utilities
+- `@hugeicons/react` for icons
+
+## Quick Start
+
+### 1) Install dependencies
+
+```bash
+npm install
+```
+
+### 2) Start development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev    # Start local dev server
+npm run build  # Create production build
+npm run start  # Run production server
+npm run lint   # Run ESLint
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+app/
+	layout.tsx               # Root layout + metadata + providers
+	page.tsx                 # Landing page
+	docs/
+		page.tsx               # Docs page shell
+		components/            # Docs-specific UI sections
+	changelog/
+		page.tsx               # Changelog page shell
+		components/            # Changelog-specific UI sections
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components/
+	layout/                  # Navbar, footer, mobile nav, theme toggle
+	sections/                # Landing page sections
+	ui/                      # Reusable UI primitives
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+constant/                  # Static content/data for pages
+lib/                       # Utility helpers
+hooks/                     # Custom hooks
+types/                     # Shared TypeScript types
+```
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Path alias is configured as `@/*` in `tsconfig.json`.
+- Global styles are defined in `app/globals.css`.
+- The site metadata is declared in `app/layout.tsx` and route-level pages.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Related Links
+
+- CLI repository: https://github.com/samrosemohammed/create-samrose-app
+- npm package: https://www.npmjs.com/package/create-samrose-app
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
