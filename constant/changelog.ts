@@ -2,9 +2,42 @@ import type { CategoryVisualConfig, ChangeCategory, Release } from "@/types";
 
 export const CHANGELOG_RELEASES: Release[] = [
   {
-    version: "1.1.0",
+    version: "1.0.3",
     date: "April 2026",
     label: "latest",
+    summary:
+      "Added Playwright E2E testing support across CLI prompts, scaffolding, and CI.",
+    changes: [
+      {
+        category: "feature",
+        text: "Added Playwright (E2E) as a testing framework option in CLI prompts",
+      },
+      {
+        category: "feature",
+        text: "Scaffold now generates Playwright config and starter e2e/home.spec.ts test",
+      },
+      {
+        category: "improvement",
+        text: "Added Playwright scripts: test, test:ci, test:ui, test:headed, and test:install-browsers",
+      },
+      {
+        category: "improvement",
+        text: "Extended testing type support to include Playwright in core project types",
+      },
+      {
+        category: "improvement",
+        text: "GitHub Actions CI setup now supports Playwright test execution",
+      },
+      {
+        category: "improvement",
+        text: "CI workflow now installs Playwright browsers automatically when Playwright is selected",
+      },
+    ],
+  },
+  {
+    version: "1.0.2",
+    date: "April 2026",
+    label: "stable",
     summary: "Added oRPC support, improved CLI prompts, and enhanced DX.",
     changes: [
       { category: "feature", text: "Added oRPC as an API layer option" },
@@ -31,7 +64,7 @@ export const CHANGELOG_RELEASES: Release[] = [
     ],
   },
   {
-    version: "1.0.0",
+    version: "1.0.1",
     date: "March 2026",
     label: "stable",
     summary: "Initial public release with full stack scaffolding support.",
